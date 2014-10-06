@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="lib/prism/prism.css">
+
+    <!-- app css -->
+    <link rel="stylesheet" href="static/css/default.css">
+</head>
+<body>
+    <header ng-controller="HeaderController">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" ng-click="toggleNav()">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Demo App</a>
+                </div>
+                <nav class="navbar-collapse collapse" collapse="navCollapsed">
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                        <li ui-sref-active="active"><a ui-sref="snippets.list">Snippets</a></li>
+                        <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+                    </ul>
+                </nav><!--/.nav-collapse -->
+            </div>
+        </div>
+    </header>
+
+    <section data-ui-view class="main"></section>
+
+    <!-- vendor js -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/prism/prism.js"></script>
+
+    <!-- app js -->
+    <script src="app/app.js"></script>
+    <script src="app/config/snippets.routes.js"></script>
+    <script src="app/directives/prism.directive.js"></script>
+    <script src="app/controllers/header.controller.js"></script>
+    <script src="app/controllers/snippets.controller.js"></script>
+
+</body>
+</html>
