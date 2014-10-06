@@ -1,0 +1,59 @@
+<!--table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="snippet in snippets">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ snippet.name }}</td>
+            <td>{{ snippet.author }}</td>
+            <td>{{ snippet.description }}</td>
+            <td>
+                <button class="btn btn-primary" ui-sref="snippets.detail({snippetId: snippet.$id})">
+                    <span class="glyphicon glyphicon-open"></span>
+                </button>
+                <button class="btn btn-primary" ui-sref="snippets.edit({snippetId: snippet.$id})">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </button>
+                <button class="btn btn-danger" ng-click="snippets.$remove(snippet)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table-->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <button class="btn btn-default btn-xs pull-right" ui-sref="snippets.create">
+            <span class="glyphicon-plus"></span>
+            Add New Snippet
+        </button>
+        List of current snippets
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="snippet in snippets">
+                <div class="pull-right">
+                    <button class="btn btn-primary btn-xs" ui-sref="snippets.edit({snippetId: snippet.$id})">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button class="btn btn-danger btn-xs" ng-click="snippets.$remove(snippet)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+                <h4 class="list-group-item-heading">
+                    <a ui-sref="snippets.detail({snippetId: snippet.$id})">{{ snippet.name }} <small> by {{ snippet.author }}</small></a>
+                </h4>
+                <p class="list-group-item-text">{{ snippet.description }}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+

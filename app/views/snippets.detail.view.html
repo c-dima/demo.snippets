@@ -1,0 +1,13 @@
+<h1>{{ snippet.name }} <small>by {{ snippet.author }}</small></h1>
+<h4>{{ snippet.description }}</h4>
+<pre><code class="language-javascript" prism>{{ snippet.code }}</code></pre>
+<button class="btn btn-primary" ui-sref="snippets.edit({snippetId: snippet.$id})">
+    <span class="glyphicon glyphicon-edit"></span>
+</button>
+<button class="btn btn-danger" ng-click="delete(snippet.$id)">
+    <span class="glyphicon glyphicon-trash"></span>
+</button>
+
+
+
+

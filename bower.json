@@ -1,0 +1,12 @@
+{
+    "name" : "Demo.Snippets",
+    "dependencies": {
+        "bootstrap": "latest",
+        "angular": "latest",
+        "angular-ui-router": "latest",
+        "angular-bootstrap": "latest",
+        "angularfire" : "latest"
+        //"prism": "gh-pages"
+    }
+
+}
